@@ -8,14 +8,6 @@ Pair.ai is a proactive chat application designed to redefine human-computer inte
 > **Ever heard of an AI starting the conversation?**  
 > No, right? Pair.ai breaks the mold. Our AI companions don't just wait for a prompt; they reach out, share ideas, and initiate the kind of conversations you have with your real friends.
 
------
-
-\<p align="center"\>
-\<img src="[https://your-image-host.com/pair-ai-demo.gif](https://www.google.com/search?q=https://your-image-host.com/pair-ai-demo.gif)" alt="Pair.ai Demo GIF" width="80%"\>
-\</p\>
-
------
-
 ## ✨ Key Features
 
   - 🤖 **Proactive AI**    
