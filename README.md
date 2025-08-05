@@ -119,8 +119,4 @@ Please read our `CONTRIBUTING.md` file for details on our code of conduct and th
 
 This project is licensed under the MIT License - see the **[LICENSE.md](LICENSE.md)** file for details.
 
-\<br\>
-
-\<p align="center"\>
 Made with ❤️ in India.
-\</p\>
