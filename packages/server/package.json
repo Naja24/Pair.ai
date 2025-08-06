@@ -1,0 +1,6 @@
+{
+  "name": "server",
+  "scripts": {
+    "dev": "uvicorn run:app --reload --port 5000"
+  }
+}
