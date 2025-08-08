@@ -56,7 +56,7 @@ You will need the following tools installed on your system:
 1.  **Clone the repository:**
 
     ```bash
-    git clone https://github.com/your-username/pair.ai.git
+    git clone https://github.com/Naja24/Pair.ai.git
     cd pair.ai
     ```
 
@@ -68,8 +68,10 @@ You will need the following tools installed on your system:
         ```env
         OPENAI_API_KEY="your_super_secret_api_key"
         ```
+    Note: Currently Ollama is used, so you can skip this instruction
+    
 
-3.  **Install Backend Dependencies (Python):**
+4.  **Install Backend Dependencies (Python):**
 
     ```bash
     cd packages/server
@@ -77,13 +79,13 @@ You will need the following tools installed on your system:
     cd ../.. 
     ```
 
-4.  **Install Frontend Dependencies (Node.js):**
+5.  **Install Frontend Dependencies (Node.js):**
 
     ```bash
     npm install
     ```
 
-5.  **Run the Development Servers:**
+6.  **Run the Development Servers:**
     This command will start both the frontend and backend servers concurrently.
 
     ```bash
