@@ -42,15 +42,6 @@ The project is built with a modern, scalable tech stack.
 
 Follow these instructions to get the project up and running on your local machine for development and testing purposes.
 
-### Prerequisites
-
-You will need the following tools installed on your system:
-
-  - Git
-  - Node.js (v18.x or higher)
-  - Python (v3.9 or higher)
-  - An OpenAI API Key
-
 ### Installation & Setup
 
 1.  **Clone the repository:**
@@ -68,7 +59,7 @@ You will need the following tools installed on your system:
         ```env
         OPENAI_API_KEY="your_super_secret_api_key"
         ```
-    Note: Currently Ollama is used, so you can skip this instruction
+    Note: Currently Llama 3 8B is used due to resource constraint, so you can skip this instruction
     
 
 4.  **Install Backend Dependencies (Python):**
