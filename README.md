@@ -34,7 +34,7 @@ The project is built with a modern, scalable tech stack.
 | Frontend | Backend | AI Engine | Database | Real-time |
 | :--- |:--- |:--- |:--- |:--- |
 |  |  |  |  |  |
-| `React.js` | `Flask / FastAPI` | `GPT-4o` | `MongoDB` | `WebSockets` |
+| `React.js` | `Flask / FastAPI` | `Llama 3 8B Instruct` | `MongoDB` | `WebSockets` |
 
 -----
 
