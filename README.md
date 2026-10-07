@@ -1,115 +1,74 @@
-
 # Pair.ai
 
 **Beyond a chatbot. Your next conversation starts here.**
 
-Pair.ai is a proactive chat application designed to redefine human-computer interaction. Our AI bots interact with the warmth, wit, and unpredictability of a real person, creating connections that feel genuine.
+Pair.ai is a proactive chat application built around an open-source LLM. Instead of waiting for a prompt, the AI companions can start conversations, reply with human-paced delays, and take on configurable personas in one-to-one and group chats.
 
-> **Ever heard of an AI starting the conversation?**  
-> No, right? Pair.ai breaks the mold. Our AI companions don't just wait for a prompt; they reach out, share ideas, and initiate the kind of conversations you have with your real friends.
+## Features
 
-## ✨ Key Features
+- **Proactive messaging:** bots can initiate chats and start new topics.
+- **Human-paced replies:** response timing is delayed to mimic natural conversation rhythm.
+- **Configurable personas:** choose a personality or assign roles to bots in group chats.
+- **Group chats:** invite friends and add multiple AI bots.
+- **Interaction modes:** Friend, Date, and Group Chat.
 
-  - 🤖 **Proactive AI**    
-        Our flagship feature. The AI doesn't wait—it initiates chats, checks in on you, and starts new topics, just like a real friend.
+## Architecture
 
-  - 🧠 **Human-like Nuance**    
-        Say goodbye to instant, robotic replies. Our AI incorporates calculated delays and context-aware emotional intelligence to mimic the natural rhythm of human conversation.
+| Layer | Technology |
+|---|---|
+| Frontend | React.js |
+| Backend | Flask / FastAPI (Python) |
+| Model | Llama 3 8B Instruct |
+| Database | MongoDB |
+| Real-time | WebSockets |
 
-  - 🎭 **Customizable Personalities**    
-        Choose your vibe. Match with AI companions based on shared interests and define their roles in group chats—whether you need a "nerd," a "creep," a "roaster," or a supportive friend.
+Llama 3 8B is used because of resource constraints.
 
-  - 👥 **Dynamic Group Chats**    
-        Invite your real friends and add multiple AI bots to the mix. Watch as they participate, roast each other, and add a new layer of fun to your group dynamics.
+## Getting Started
 
-  - 🕹️ **Modes for Every Mood**    
-        Seamlessly switch between different interaction modes, including `Friend`, `Date`, or `Group Chat`, for a tailored experience.
+```bash
+git clone https://github.com/Naja24/Pair.ai.git
+cd Pair.ai
+cd packages/server && pip install -r requirements.txt && cd ../..
+npm install
+npm run dev
+```
 
------
+Frontend: `http://localhost:5173` | Backend: `http://localhost:5000`
 
-## 🛠️ Tech Stack
+## Evaluation
 
-The project is built with a modern, scalable tech stack.
+`eval_harness.py` runs a fixed set of test prompts against the model and logs results to CSV so that changes to the system prompt can be compared run to run.
 
-| Frontend | Backend | AI Engine | Database | Real-time |
-| :--- |:--- |:--- |:--- |:--- |
-|  |  |  |  |  |
-| `React.js` | `Flask / FastAPI` | `Llama 3 8B Instruct` | `MongoDB` | `WebSockets` |
+Checks currently implemented:
+- Prompt-injection resistance (a canary string planted in the system prompt must never appear in replies)
+- Unsafe-content marker check
+- Response length check
+- Latency
 
------
+**Results** (fill in from your own runs; do not publish numbers you did not measure):
 
-## 🚀 Getting Started
+| Version | Test cases | Injection leaks | Unsafe flags | Over-length | Median latency |
+|---|---|---|---|---|---|
+| v1 | TODO | TODO | TODO | TODO | TODO |
+| v2 | TODO | TODO | TODO | TODO | TODO |
 
-Follow these instructions to get the project up and running on your local machine for development and testing purposes.
+## Limitations
 
-### Installation & Setup
+- The test set is small and hand-written, so results are indicative, not statistically meaningful.
+- Rule-based checks catch only the failure types they are written for.
+- An 8B model can drift from its persona and is more vulnerable to prompt injection than larger models.
+- Not evaluated for bias, long-term memory, or production-scale monitoring.
 
-1.  **Clone the repository:**
+## Roadmap
 
-    ```bash
-    git clone https://github.com/Naja24/Pair.ai.git
-    cd pair.ai
-    ```
+- [ ] Advanced sentiment analysis
+- [ ] Persistent long-term memory
+- [ ] Voice chat
+- [ ] Instagram Reels integration
+- [ ] Mobile apps
+- [ ] Larger evaluation set and LLM-as-judge scoring checked against hand labels
 
-2.  **Set up environment variables:**
+## License
 
-      - Create a `.env` file in the root of the project.
-      - Copy the contents of `.env.example` into your new `.env` file.
-      - Add your OpenAI API key to the `.env` file:
-        ```env
-        OPENAI_API_KEY="your_super_secret_api_key"
-        ```
-    Note: Currently Llama 3 8B is used due to resource constraint, so you can skip this instruction
-    
-
-4.  **Install Backend Dependencies (Python):**
-
-    ```bash
-    cd packages/server
-    pip install -r requirements.txt
-    cd ../.. 
-    ```
-
-5.  **Install Frontend Dependencies (Node.js):**
-
-    ```bash
-    npm install
-    ```
-
-6.  **Run the Development Servers:**
-    This command will start both the frontend and backend servers concurrently.
-
-    ```bash
-    npm run dev
-    ```
-
-Your application should now be running\!
-
-  - Frontend available at `http://localhost:5173` (or your configured port).
-  - Backend server running on `http://localhost:5000`.
-
------
-
-## 🗺️ Project Roadmap
-
-We have big plans for Pair.ai. Here's what we're working on next:
-
-  - [ ] **Advanced Sentiment Analysis:** Deeper emotional understanding for more empathetic responses.
-  - [ ] **Instagram Integration:** Allow AI friends to share and react to Reels based on interests.
-  - [ ] **Voice Chat Capabilities:** Introduce real-time voice conversations with AI companions.
-  - [ ] **Persistent Memory:** Long-term memory for AI to recall past conversations and important details.
-  - [ ] **Mobile App Release:** Launching native apps for iOS and Android.
-
------
-
-## 🤝 Contributing
-
-We welcome contributions from the community\! Whether you're a developer, designer, or just have great ideas, you can help make Pair.ai better.
-
-Please read our `CONTRIBUTING.md` file for details on our code of conduct and the process for submitting pull requests.
-
-## 📄 License
-
-This project is licensed under the MIT License - see the **[LICENSE.md](LICENSE.md)** file for details.
-
-Made with ❤️ in India.
+MIT. See [LICENSE.md](LICENSE.md).
